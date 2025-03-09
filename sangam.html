@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangam Club - FestaSphere</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+         
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: #4285F4;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: white;
+            border: 5px solid white;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #4285F4;
+        }
+        
+        .club-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .club-tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .club-description {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .description-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #4285F4;
+            font-weight: 600;
+        }
+        
+        .description-text {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        .content-split {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .left-section {
+            flex: 0.6;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .right-section {
+            flex: 0.4;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #4285F4;
+            font-weight: 600;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .event-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4285F4;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-date {
+            font-size: 0.9rem;
+            color: #4285F4;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .event-description {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .explore-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .explore-btn:hover {
+            background-color: #3367d6;
+        }
+        
+        .contact-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #4285F4;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        .social-link:hover {
+            background-color: #4285F4;
+            color: white;
+        }
+        
+        .team-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: #4285F4;
+        }
+        
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .member-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .member-info h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .member-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 900px) {
+            .content-split {
+                flex-direction: column;
+            }
+            
+            .left-section, .right-section {
+                flex: 1;
+                width: 100%;
+            }
+            
+            .club-name {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/jpeg" href="icon.jpg">
+</head>
+
+<body>
+    <!-- Header with Profile Image -->
+    <header class="header" style="background-image:url('sangam-banner.jpg');background-repeat:no-repeat;background-size: cover;">
+        <div class="header-content">
+            <div class="profile-image" style="font-size: 90px;">
+                <img src="sangam-2.jpg">
+            </div>
+            <h1 class="club-name">Sangam Club</h1>
+            <p class="club-tagline"> Celebrating traditions | Showcasing talent | Uniting through culture | Honoring festivals | Promoting artistic expression | Fostering creativity | Bringing communities together | Inspiring through dance and music</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Club Description Section -->
+        <div class="club-description">
+            <h2 class="description-title">About Sangam</h2>
+            <p class="description-text">Sangam is a cultural club that celebrates traditions and festivals through a variety of events. The club organizes performances, music, and dance, giving students the chance to connect with their cultural heritage and showcase their talents.
+            </p>
+            <p class="description-text">The highlight of Sangam’s events is Nmotsav, an eagerly awaited cultural fest. It features dance, music, and other performances, bringing students together to celebrate creativity and cultural pride.
+            </p>
+            <p class="description-text">Along with Nmotsav, Sangam hosts various dance and music competitions, encouraging students to express themselves artistically. The club fosters unity, tradition, and the joy of cultural celebration throughout the year.</p>
+        </div>
+        
+        <!-- Content Split: 60% left, 40% right -->
+        <div class="content-split">
+            <!-- Left Section: Upcoming Events (60%) -->
+            <div class="left-section">
+                <h2 class="section-title">Upcoming Events</h2>
+                
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-date">MAR 15, 2025 • 10:00 AM</div>
+                    <h3 class="event-title">Nmotsav</h3>
+                    <p class="event-description">The grand cultural fest featuring performances, music, and dance, showcasing diverse talents.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-date">MAR 20, 2025 • 4:00 PM</div>
+                    <h3 class="event-title">Ganesh Chaturthi</h3>
+                    <p class="event-description">A festive celebration honoring Lord Ganesha with music, dance, and traditional rituals.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-date">APR 02, 2025 • 5:30 PM</div>
+                    <h3 class="event-title">Janmashtami</h3>
+                    <p class="event-description">A vibrant celebration of Lord Krishna’s birth with dance, music, and cultural performances.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                
+            </div>
+            
+            <!-- Right Section: Contact Info & Team (40%) -->
+            <div class="right-section">
+                <h2 class="section-title">Connect With Us</h2>
+                
+                <!-- Contact Information -->
+                <div class="contact-item">
+                    <div class="contact-icon">E</div>
+                    <div>sangam@university.edu</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">L</div>
+                    <div>Room 401, University Campus</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">M</div>
+                    <div>Meetings: Every Saturday at 5:00 PM</div>
+                </div>
+                
+           
+                <!-- Team Section -->
+                <h3 class="team-title">Our Team</h3>
+                
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-avatar">TM</div>
+                    <div class="member-info">
+                        <h4>Tanu Mishra</h4>
+                        <p>Cultural Event Coordinator</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-avatar">DS</div>
+                    <div class="member-info">
+                        <h4>Deepesh Singh</h4>
+                        <p>Creative Director</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-avatar">MK</div>
+                    <div class="member-info">
+                        <h4>Manisha Kala</h4>
+                        <p>Marketing and Promotions Head</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="member-avatar">MP</div>
+                    <div class="member-info">
+                        <h4>Miti Patel</h4>
+                        <p>Logistics Manager</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <div class="member-avatar">RJ</div>
+                    <div class="member-info">
+                        <h4>Reena Kala</h4>
+                        <p>Community Relations Manager</p>
+                    </div>
+                </div>
+                <br>
+                <h2 class="section-title">Gallery</h2>
+                
+                <!-- Contact Information -->
+                <div class="contact-item">
+                    <img src="sgm1.jpg" style="width:326px;height: 193px;">
+                </div>
+                <div class="contact-item">
+                    <img src="sgm2.jpg" style="width:326px;height: 193px;">
+                </div>
+                <div class="contact-item">
+                    <img src="sgm3.jpg" style="width:326px;height: 193px;">
+                </div>
+                <div class="contact-item">
+                    <img src="sgm4.jpg" style="width:326px;height: 193px;">
+                </div>
+                <div class="contact-item">
+                    <img src="sgm5.jpg" style="width:326px;height: 193px;">
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

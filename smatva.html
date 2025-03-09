@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samatva Club - FestaSphere</title>
+    <style>
+        <link rel="icon" type="image/jpeg" href="icon.jpg">
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: #4285F4;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: white;
+            border: 5px solid white;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #4285F4;
+        }
+        
+        .club-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .club-tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .club-description {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .description-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #4285F4;
+            font-weight: 600;
+        }
+        
+        .description-text {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        .content-split {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .left-section {
+            flex: 0.6;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .right-section {
+            flex: 0.4;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #4285F4;
+            font-weight: 600;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .event-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4285F4;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-date {
+            font-size: 0.9rem;
+            color: #4285F4;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .event-description {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .explore-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .explore-btn:hover {
+            background-color: #3367d6;
+        }
+        
+        .contact-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #4285F4;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        .social-link:hover {
+            background-color: #4285F4;
+            color: white;
+        }
+        
+        .team-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: #4285F4;
+        }
+        
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .member-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .member-info h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .member-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 900px) {
+            .content-split {
+                flex-direction: column;
+            }
+            
+            .left-section, .right-section {
+                flex: 1;
+                width: 100%;
+            }
+            
+            .club-name {
+                font-size: 2rem;
+            }
+        }
+    </style>
+<link rel="icon" type="image/jpeg" href="icon.jpg">
+</head>
+
+<body>
+    <!-- Header with Profile Image -->
+    <header class="header" style="background-image:url('samatva-banner.jpg')">
+        <div class="header-content">
+            <div class="profile-image">
+                <img src="smatva-1.jpg">
+            </div>
+            <h1 class="club-name">The Samatva Society</h1>
+            <p class="club-tagline">Samatva, the Legal Aid Society of NMIMS Indore.</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Club Description Section -->
+        <div class="club-description">
+            <h2 class="description-title">About Samatva</h2>
+            <p class="description-text">Samatva, the Legal Aid Society of NMIMS Indore, is dedicated to promoting legal awareness and accessibility within the community..</p>
+            <p class="description-text">The society engages in initiatives such as street plays (Nukkad Natak) and school visits to educate the public about their legal rights and remedies.
+
+                .</p>
+            <p class="description-text">Samatva collaborates with governmental bodies to provide legal guidance and assistance, ensuring that legal knowledge extends beyond academic settings into the broader community..</p>
+        </div>
+        
+        <!-- Content Split: 60% left, 40% right -->
+        <div class="content-split">
+            <!-- Left Section: Upcoming Events (60%) -->
+            <div class="left-section">
+                <h2 class="section-title">Upcoming Events</h2>
+                
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-date">MAR 19, 2025 • 10:00 AM</div>
+                    <h3 class="event-title">2nd National Legal Aid Policy Convention 2025</h3>
+                    <p class="event-description">A convention focusing on legal aid policies, organized in collaboration with the Ministry of Social Justice and Empowerment, Government of India..</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-date">MAR 25, 2025 • 4:00 PM</div>
+                    <h3 class="event-title">Legal Awareness Workshop</h3>
+                    <p class="event-description">A workshop aimed at educating students and community members about fundamental legal rights and responsibilities..</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-date">APR 02, 2025 • 5:30 PM</div>
+                    <h3 class="event-title">School Outreach Program</h3>
+                    <p class="event-description"> An initiative to introduce basic legal concepts to school students, fostering early awareness of legal rights..</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 4 -->
+                <div class="event-card">
+                    <div class="event-date">APR 10, 2025 • 2:00 PM</div>
+                    <h3 class="event-title">Nukkad Natak (Street Play) on Legal Rights</h3>
+                    <p class="event-description">Street plays performed to raise public awareness about legal rights and remedies.</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+                
+                <!-- Event 5 -->
+                <div class="event-card">
+                    <div class="event-date">APR 18, 2025 • 11:00 AM</div>
+                    <h3 class="event-title">Legal Aid Camp</h3>
+                    <p class="event-description"> Providing free legal assistance and counseling to underprivileged communities.!</p>
+                    <a href="#" class="explore-btn">Explore More</a>
+                </div>
+            
+            </div>
+            
+            <!-- Right Section: Contact Info & Team (40%) -->
+            <div class="right-section">
+                <h2 class="section-title">Connect With Us</h2>
+                
+                <!-- Contact Information -->
+                <div class="contact-item">
+                    <div class="contact-icon">E</div>
+                    <div>samatva@university.edu</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">L</div>
+                    <div>Tech Building, Room 201, University Campus</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">M</div>
+                    <div>Meetings: Every Friday at 5:00 PM</div>
+                </div>
+                
+                <!-- Social Links -->
+                
+                
+                <!-- Team Section -->
+                <h3 class="team-title">Our Team</h3>
+                
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-avatar">AT</div>
+                    <div class="member-info">
+                        <h4>Anshika Tiwari</h4>
+                        <p>Club Lead</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-avatar">SJ</div>
+                    <div class="member-info">
+                        <h4>Smriti Joshi</h4>
+                        <p>Operational Lead</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-avatar">MJ</div>
+                    <div class="member-info">
+                        <h4>Manoj Joshi</h4>
+                        <p>Event Coordinator</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="member-avatar">MN</div>
+                    <div class="member-info">
+                        <h4>Mariam Nathe</h4>
+                        <p>Design Lead</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <div class="member-avatar">RJ</div>
+                    <div class="member-info">
+                        <h4>Ryan Johnson</h4>
+                        <p>Content Creator</p>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <br>
+                <h3 class="team-title">Gallery</h3>
+                <div class="contact-item">
+                    <img src="smtv1.jpg" style="width:326px;height: 193px;">
+                </div>
+                <div class="contact-item">
+                    <img src="smtv2.jpg" style="width:326px;height: 193px;">
+                </div>
+                <div class="contact-item">
+                    <img src="smtv3.jpg" style="width:326px;height: 193px;">
+                </div>
+                <div class="contact-item">
+                    <img src="smtv4.jpg" style="width:326px;height: 193px;">
+                </div>
+                <div class="contact-item">
+                    <img src="smtv5.jpg" style="width:326px;height: 193px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
